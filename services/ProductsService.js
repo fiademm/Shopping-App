@@ -24,7 +24,7 @@ const PRODUCTS = [
         id: 103,
         name: 'FastLane Speed Bike',
         price: 600,
-        image: require('../assets/products/bike4.jpg'),
+        image: require('../assets/products/bike4.jpeg'),
         description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
     },
 ];

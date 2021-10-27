@@ -1,21 +1,47 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import { View, Text, FlatList, StyleSheet } from 'react-native';
 
-export function ProductsList() {
+import { Product } from '../components/Product.js';
+import { getProducts } from '../services/ProductsService.js';
+
+export function ProductsList ({navigation}) {
+
+  function renderProduct({item: product}) {
+    return (
+      <Product {...product} 
+      onPress={() => {
+        navigation.navigate('ProductDetails', {
+          productId: product.id,
+        });
+      }}
+      />
+    );
+  }
+  
+  const [products, setProducts] = useState([]);
+  
+  useEffect(() => {
+    setProducts(getProducts());
+  });
+  
   return (
-    <View style={styles.container}>
-      <Text>Product Details Screen</Text>
-      <StatusBar style="auto" />
-    </View>
+    <FlatList
+      style={styles.productsList}
+      contentContainerStyle={styles.productsListContainer}
+      keyExtractor={(item) => item.id.toString()}
+      data={products}
+      renderItem={renderProduct}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  productsList: {
+    backgroundColor: '#eeeeee',
+  },
+  productsListContainer: {
+    backgroundColor: '#eeeeee',
+    paddingVertical: 8,
+    marginHorizontal: 8,
   },
 });
