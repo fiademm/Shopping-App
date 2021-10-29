@@ -1,116 +1,141 @@
-import React from "react";
-import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { StatusBar } from "expo-status-bar";
+import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity, Alert } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { AntDesign } from "@expo/vector-icons";
 import { Link } from "@react-navigation/native";
 
 export function Login(params) {
   const navigation = params.navigation;
+
   return (
-    <View
-      style={{
-        backgroundColor: "white",
-        flex: 1,
-        paddingHorizontal: 20,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-    <Image 
-        style={{
-          transform: [{ rotate: "45deg" }],
-          borderRadius: 20,
-          marginBottom: 60,
-          width: 200,
-          height: 200,
-        }}
-        source={{uri: 'https://as1.ftcdn.net/v2/jpg/03/44/12/00/1000_F_344120053_TndpC1HY8LCXHGaGReBDP1Z3H8Mvt5wD.jpg'}}
-    />
-    <Text style={{ fontSize: 30, color: "grey" }}>Welcome to</Text>
-    <Text style={{ fontSize: 40, fontWeight: "bold" }}>Power Bike Shop</Text>
+    <View style={styles.container}>
+        <Image style={styles.bgImage} source={{ uri: "https://lorempixel.com/900/1400/nightlife/2/" }}/>
+        <View style={styles.inputContainer}>
+          <TextInput style={styles.inputs}
+              placeholder="Email"
+              keyboardType="email-address"
+              underlineColorAndroid='transparent'
+              onChangeText={(email) => this.setState({email})}/>
+          <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/nolan/40/000000/email.png'}}/>
+        </View>
+        
+        <View style={styles.inputContainer}>
+          <TextInput style={styles.inputs}
+              placeholder="Password"
+              secureTextEntry={true}
+              underlineColorAndroid='transparent'
+              onChangeText={(password) => this.setState({password})}/>
+          <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/nolan/40/000000/key.png'}}/>
+        </View>
 
-    {<View style={{}}>
-        <TextInput
-          style={{
-            padding: 15,
-            borderRadius: 10,
-            borderWidth: 0.7,
-            paddingHorizontal: 60,
-          }}
-          placeholder="Enter your username"
-        />
-      </View>}
-      {<View style={{ marginTop: 10,}}>
-        <TextInput
-          secureTextEntry={true}
-          onChangeText={(
-            e
-          )=> {
-            console.log(e)
-          }}
-          style={{
-            padding: 15,
-            borderRadius: 10,
-            borderWidth: 0.7,
-            paddingHorizontal: 60,
-          }}
-          placeholder="Enter your password"
-        />
-      </View>}
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate("Home");
-        }}
-        style={{
-          padding: 15,
-          paddingHorizontal: 80,
-          marginTop: 10,
-          alignItems: "center",
-          borderRadius: 10,
-          flexDirection: "row",
-          backgroundColor: "black",
-        }}
-      >
-        <Text style={{ paddingLeft: 10, color: "white" }}>Login</Text>
-      </TouchableOpacity>
-    
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate("Home");
-        }}
-        style={{
-          padding: 5,
-          paddingHorizontal: 50,
-          marginTop: 20,
-          alignItems: "center",
-          borderColor: "black",
-          borderRadius: 10,
-          flexDirection: "row",
-          backgroundColor: "#e6e6e6",
-        }}
-      >
-        <AntDesign name="google" size={24} color="black" />
-        <Text style={{ paddingLeft: 10, color: "black" }}>Login with Gmail</Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.btnForgotPassword} onPress={() => Alert.alert('restore_password')}>
+            <Text style={styles.btnText}>Forgot your password?</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate("Home");
-        }}
-        style={{
-          padding: 5,
-          paddingHorizontal: 50,
-          marginTop: 10,
-          alignItems: "center",
-          borderColor: "black",
-          borderRadius: 10,
-          flexDirection: "row",
-          backgroundColor: "#0f0f0f",
-        }}
-      >
-        <AntDesign name="apple1" size={24} color="white" />
-        <Text style={{ paddingLeft: 10, color: "white" }}>Login with Apple</Text>
-      </TouchableOpacity>
+        <TouchableOpacity 
+          style={[styles.buttonContainer, styles.loginButton]} 
+          onPress={() => {navigation.navigate('Products');
+          }}>
+          <Text style={styles.loginText}>Login</Text>
+        </TouchableOpacity>
 
-    </View>
+
+        <TouchableOpacity 
+          style={styles.buttonContainer}
+          onPress={() => {navigation.navigate('SignUp');
+        }}
+        >
+            <Text style={styles.btnText}>Register</Text>
+        </TouchableOpacity>
+      </View>
   );
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#DCDCDC',
+  },
+  inputContainer: {
+    borderBottomColor: '#F5FCFF',
+    backgroundColor: '#FFFFFF',
+    borderRadius:30,
+    borderBottomWidth: 1,
+    width:300,
+    height:45,
+    marginBottom:20,
+    flexDirection: 'row',
+    alignItems:'center',
+
+    shadowColor: "#808080",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
+  },
+  inputs:{
+    height:45,
+    marginLeft:16,
+    borderBottomColor: '#FFFFFF',
+    flex:1,
+  },
+  inputIcon:{
+    width:30,
+    height:30,
+    marginRight:15,
+    justifyContent: 'center'
+  },
+  buttonContainer: {
+    height:45,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom:20,
+    width:300,
+    borderRadius:30,
+    backgroundColor:'transparent'
+  },
+  btnForgotPassword: {
+    height:15,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    marginBottom:15,
+    width:300,
+    backgroundColor:'transparent'
+  },
+  loginButton: {
+    backgroundColor: "#00b5ec",
+    marginTop:10,
+    shadowColor: "#808080",
+    shadowOffset: {
+      width: 0,
+      height: 9,
+    },
+    shadowOpacity: 0.50,
+    shadowRadius: 12.35,
+
+    elevation: 19,
+  },
+  loginText: {
+    color: 'white',
+  },
+  bgImage:{
+    flex: 1,
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+  },
+  btnText:{
+    color:"white",
+    fontWeight:'bold',
+  }
+});

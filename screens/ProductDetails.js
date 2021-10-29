@@ -6,7 +6,8 @@ import {
   ScrollView, 
   SafeAreaView, 
   Button, 
-  StyleSheet
+  StyleSheet,
+  Alert
   } from 'react-native';
 
 import { getProduct } from '../services/ProductsService.js';
@@ -25,6 +26,7 @@ export function ProductDetails({route}) {
   function onAddToCart() {
     addItemToCart(product.id);
   }
+
   
   return (
     <SafeAreaView>

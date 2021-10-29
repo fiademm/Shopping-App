@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, Image, View, StyleSheet, TouchableOpacity} from 'react-native';
 
-export function Product({name, price, image, onPress}) {
+export function Product({name, price, color, image, onPress}) {
   return (
     <View style={[styles.maincontainer]}>
       <View style={styles.card}>
@@ -11,7 +11,7 @@ export function Product({name, price, image, onPress}) {
           source={image}
         />
         <View style={styles.infoContainer}>
-          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.name}>{name + ' - ' + color}</Text>
           <Text style={styles.price}>$ {price}</Text>
         </View>
       </TouchableOpacity>
@@ -25,9 +25,8 @@ const styles = StyleSheet.create({
     flexDirection:'row',
   },
   card: {
-    flex:0.5,
+    flex:1,
     backgroundColor: 'white',
-    width: 500,
     borderRadius: 16,
     shadowOpacity: 0.2,
     shadowRadius: 4,
