@@ -10,7 +10,7 @@ export function SignUp(params) {
 
   return (
     <View style={styles.container}>
-        <Image style={styles.bgImage} source={{ uri: "https://lorempixel.com/900/1400/nightlife/8/" }}/>
+        <Image style={styles.bgImage} source={{uri: "https://lorempixel.com/900/1400/nightlife/8/" }}/>
         <View style={styles.inputContainer}>
           <TextInput style={styles.inputs}
               placeholder="Full name"

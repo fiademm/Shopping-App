@@ -31,6 +31,62 @@ const PRODUCTS = [
         image: require('../assets/products/bike4.jpeg'),
         description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
     },
+    {
+        id: 104,
+        name: 'FastLane Speed Bike',
+        price: 600,
+        color: 'Black',
+        image: require('../assets/products/bike4.jpeg'),
+        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+    },
+    {
+        id: 105,
+        name: 'FastLane Speed Bike',
+        price: 600,
+        color: 'Black',
+        image: require('../assets/products/bike4.jpeg'),
+        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+    },
+    {
+        id: 106,
+        name: 'FastLane Speed Bike',
+        price: 600,
+        color: 'Black',
+        image: require('../assets/products/bike4.jpeg'),
+        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+    },
+    {
+        id: 107,
+        name: 'FastLane Speed Bike',
+        price: 600,
+        color: 'Black',
+        image: require('../assets/products/bike4.jpeg'),
+        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+    },
+    {
+        id: 108,
+        name: 'FastLane Speed Bike',
+        price: 600,
+        color: 'Black',
+        image: require('../assets/products/bike4.jpeg'),
+        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+    },
+    {
+        id: 109,
+        name: 'FastLane Speed Bike',
+        price: 600,
+        color: 'Black',
+        image: require('../assets/products/bike4.jpeg'),
+        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+    },
+    {
+        id: 110,
+        name: 'FastLane Speed Bike',
+        price: 600,
+        color: 'Black',
+        image: require('../assets/products/bike4.jpeg'),
+        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+    },
 ];
 
 export function getProducts() {

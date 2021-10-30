@@ -1,22 +1,36 @@
 import React from 'react';
-import {Text, Image, View, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, Image, View, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
+import { Entypo, Feather, FontAwesome, MaterialIcons } from '@expo/vector-icons';
 
+const width = Dimensions.get('screen').width/2-30;
 export function Product({name, price, color, image, onPress}) {
   return (
-    <View style={[styles.maincontainer]}>
-      <View style={styles.card}>
-      <TouchableOpacity onPress={onPress}>
-        <Image
-          style={styles.thumb}
-          source={image}
-        />
-        <View style={styles.infoContainer}>
-          <Text style={styles.name}>{name + ' - ' + color}</Text>
-          <Text style={styles.price}>$ {price}</Text>
+    <TouchableOpacity onPress={onPress}>
+    <View style={styles.card}>
+        <View style={{alignItems:"flex-end"}}>
+            <View style={{
+                width:30, 
+                height:30, 
+                borderRadius:15, 
+                alignItems:"center", 
+                justifyContent:"center",
+            }}>
+                <MaterialIcons name="favorite" size={18} />
+            </View>
         </View>
-      </TouchableOpacity>
-      </View>
-    </View>
+        <View style={{height: 100, alignItems: "center"}}>
+            <Image style={{ flex:1, resizeMode:"contain"}} source={image} />
+        </View>
+        <Text style={{fontWeight:"bold", fontSize: 17, marginTop: 10}}> {name + ' - ' + color} </Text>
+
+        <View style={{flexDirection:"row", justifyContent: "space-between", marginTop:5}}>
+            <Text style={{fontSize:19, fontWeight:"bold",}}>${price}</Text>
+            <View style={{height:25, width:25, backgroundColor: '#00b761', borderRadius:5, justifyContent:"center", alignItems:"center"}}>
+                <Text style={{fontSize:22, color: '#fff', fontWeight:"bold"}}>+</Text>
+            </View>
+        </View>
+    </View>; 
+</TouchableOpacity>
   );
 }
 
@@ -25,19 +39,14 @@ const styles = StyleSheet.create({
     flexDirection:'row',
   },
   card: {
-    flex:1,
-    backgroundColor: 'white',
-    borderRadius: 16,
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    shadowColor: 'black',
-    shadowOffset: {
-      height: 0,
-      width: 0,
-    },
-    elevation: 1,
-    marginVertical: 20
-  },
+    height: 225,
+    backgroundColor: '#f1f1f1',
+    width,
+    marginHorizontal:2,
+    borderRadius:10,
+    marginBottom:20,
+    padding:15,
+ },
   thumb: {
     height: 500,
     borderTopLeftRadius: 16,
