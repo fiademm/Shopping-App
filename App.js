@@ -21,6 +21,7 @@ function App() {
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName = 'Login'
+          screenOptions = {{headerShown: false}}
         >
           <Stack.Screen name='SignUp' component={SignUp}
           options={({ navigation }) => ({

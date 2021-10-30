@@ -24,7 +24,71 @@ const PRODUCTS = [
         description: 'A cupcake (also British English: fairy cake; Hiberno-English: bun; Australian English: fairy cake or patty cake[1]) is a small cake designed to serve one person.'
     },
     {
-        id: 103,
+        id: 104,
+        name: 'FastLane Speed Bike',
+        price: 600,
+        color: 'Black',
+        image: require('../assets/products/bike4.jpeg'),
+        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+    },
+    {
+        id: 1005,
+        name: 'Speed Bike',
+        price: 220,
+        color: "Yellow",
+        image: require('../assets/products/bike1.jpg'),
+        description: 'Just as the name implies, a very fast bike indeed.'
+    },
+    {
+        id: 106,
+        name: 'Bikest 221',
+        price: 240,
+        color: 'Red',
+        image: require('../assets/products/bike2.jpg'),
+        description: 'A cupcake (also British English: fairy cake; Hiberno-English: bun; Australian English: fairy cake or patty cake[1]) is a small cake designed to serve one person.'
+    },
+    {
+        id: 107,
+        name: 'The Bike',
+        price: 200,
+        color: 'Blue',
+        image: require('../assets/products/bike3.jpg'),
+        description: 'A cupcake (also British English: fairy cake; Hiberno-English: bun; Australian English: fairy cake or patty cake[1]) is a small cake designed to serve one person.'
+    },
+    {
+        id: 108,
+        name: 'FastLane Speed Bike',
+        price: 600,
+        color: 'Black',
+        image: require('../assets/products/bike4.jpeg'),
+        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+    },
+    {
+        id: 109,
+        name: 'Speed Bike',
+        price: 220,
+        color: "Yellow",
+        image: require('../assets/products/bike1.jpg'),
+        description: 'Just as the name implies, a very fast bike indeed.'
+    },
+    {
+        id: 110,
+        name: 'Bikest 221',
+        price: 240,
+        color: 'Red',
+        image: require('../assets/products/bike2.jpg'),
+        description: 'A cupcake (also British English: fairy cake; Hiberno-English: bun; Australian English: fairy cake or patty cake[1]) is a small cake designed to serve one person.'
+    },
+    {
+        id: 111,
+        name: 'The Bike',
+        price: 200,
+        color: 'Blue',
+        image: require('../assets/products/bike3.jpg'),
+        description: 'A cupcake (also British English: fairy cake; Hiberno-English: bun; Australian English: fairy cake or patty cake[1]) is a small cake designed to serve one person.'
+    },
+    {
+        id: 112,
         name: 'FastLane Speed Bike',
         price: 600,
         color: 'Black',
