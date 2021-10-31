@@ -3,38 +3,34 @@ import { StatusBar } from "expo-status-bar";
 import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity, Alert, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export function Checkout(params) {
+export function CCInfo(params) {
   const navigation = params.navigation;
-  const [fname, setFName] = useState(0);
-  const [lname, setLname] = useState(0);
-  const [address, setAddress] = useState(0);
-  const [phone, setPhone] = useState(0);
-  const [email, setEmail] = useState(0);
+
+  const [cardNumber, setCardNumber] = useState(0);
+  const [holderName, setHolderName] = useState(0);
+  const [expDate, setEDate] = useState(0);
+  const [cvv, setCVC] = useState(0);
 
   const checkInput = (string) =>
   {
-    if(typeof(fname) !== "string"){  // check if the string variable is some type other than string
-      alert('Please enter first name');
+    if(typeof(cardNumber) !== "string"){  // check if the string variable is some type other than string
+      alert('Please enter card number');
       return;
     }
-    if(typeof(lname) !== "string"){  // check if the string variable is some type other than string
-      alert('Please enter last name');
+    if(typeof(holderName) !== "string"){  // check if the string variable is some type other than string
+      alert('Please enter card holder name');
       return;
     }
-    if(typeof(address) !== "string"){  // check if the string variable is some type other than string
-      alert('Please enter address');
+    if(typeof(expDate) !== "string"){  // check if the string variable is some type other than string
+      alert('Please enter expiry date');
       return;
     }
-    if(typeof(phone) !== "string"){  // check if the string variable is some type other than string
-      alert('Please enter phone');
-      return;
-    }
-    if(typeof(email) !== "string") {
-      alert('Please enter email');
+    if(typeof(cvv) !== "string") {
+      alert('Please enter CVV/CVC');
       return;
     }
     else {
-      navigation.navigate('CCInfo');
+      navigation.navigate('AcceptedOrder');
     }
   };
 
@@ -45,46 +41,38 @@ export function Checkout(params) {
           <View style={styles.inputContainer}>
             <TextInput 
               style = {styles.textInput}
-              placeholder = "First name"
+              placeholder = "Card Number"
               underlineColorAndroid= "transparent"
-              onChangeText={(value) => setFName(value)}
-            />
-          </View>
-          <View style={styles.inputContainer}>
-            <TextInput 
-              style = {styles.textInput}
-              placeholder = "Last name"
-              underlineColorAndroid= "transparent"
-              onChangeText={(value) => setLname(value)}
+              onChangeText={(value) => setCardNumber(value)}
             />
           </View>
           <View style={styles.inputContainer}>
           <TextInput 
             style = {styles.textInput}
-            placeholder = "Address"
+            placeholder = "Card Holder Name"
             underlineColorAndroid= "transparent"
-            onChangeText={(value) => setAddress(value)}
+            onChangeText={(value) => setHolderName(value)}
           />
           </View>
           <View style={styles.inputContainer}>
           <TextInput 
             style = {styles.textInput}
-            placeholder = "Phone"
+            placeholder = "Expiry date (Month - Year)"
             underlineColorAndroid= "transparent"
-            onChangeText={(value) => setPhone(value)}
+            onChangeText={(value) => setEDate(value)}
           />
           </View>
           <View style={styles.inputContainer}>
           <TextInput 
             style = {styles.textInput}
-            placeholder = "Email"
+            placeholder = "CVC/CVV"
             underlineColorAndroid= "transparent"
-            onChangeText={(value) => setEmail(value)}
+            onChangeText={(value) => setCVC(value)}
           />
           </View>
           
           <TouchableOpacity onPress={checkInput} style={styles.continueBtn}>
-            <Text style={{fontWeight: "bold", fontSize: 17, backgroundColor: 'white'}}>Continue to Payment info</Text>
+            <Text style={{fontWeight: "bold", fontSize: 17, backgroundColor: 'white'}}>Complete checkout</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>
@@ -106,23 +94,23 @@ const styles = StyleSheet.create({
     inputContainer: {
       backgroundColor: 'white',
       margin: 10,
+      padding: 5,
       paddingHorizontal: 20,
-      width: 280,
+      width: 350,
       borderRadius: 10,
     },
     textInput: {
       padding: 15,
-      fontSize: 15,
+      fontSize: 15
     },
     continueBtn: {
       backgroundColor: '#fff',
       padding: 15,
       paddingHorizontal: 20,
       borderRadius: 30,
-      margin: 20,
+      margin: 10,
       width: 250,
       alignItems: "center",
-      shadowColor: 'blue',
     },
     bgImage:{
       flex:1,

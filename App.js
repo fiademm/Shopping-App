@@ -15,6 +15,7 @@ import { CheckoutIcon } from './components/CheckoutIcon.js';
 import { Splash } from './screens/Splash.js';
 import { Welcome } from './screens/Welcome.js';
 import { Checkout } from './screens/Checkout.js';
+import { CCInfo } from './screens/CCInfo.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,7 +24,7 @@ function App() {
     <CartProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName = 'Checkout'
+          initialRouteName = 'Products'
         >
           <Stack.Screen name='Splash' component={Splash}
           options={({ navigation }) => ({
@@ -59,7 +60,12 @@ function App() {
           })} />
           <Stack.Screen name='Checkout' component={Checkout}
           options={({ navigation }) => ({
-            title: 'Checkout',
+            title: 'Personal Information',
+            headerTitleStyle: styles.headerTitle,
+          })}/>
+          <Stack.Screen name='CCInfo' component={CCInfo}
+          options={({ navigation }) => ({
+            title: 'Credit Card Information',
             headerTitleStyle: styles.headerTitle,
           })}/>
           <Stack.Screen name='AcceptedOrder' component={AcceptedOrder}
@@ -81,5 +87,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   }
 });
+
 
 export default App;
