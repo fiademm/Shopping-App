@@ -10,7 +10,7 @@ export function SignUp(params) {
 
   return (
     <View style={styles.container}>
-        <Image style={styles.bgImage} source={{uri: "https://lorempixel.com/900/1400/nightlife/8/" }}/>
+        <Image style={styles.bgImage} source={require('../assets/wallpaper.jpg')}/>
         <View style={styles.inputContainer}>
           <TextInput style={styles.inputs}
               placeholder="Full name"
@@ -37,7 +37,7 @@ export function SignUp(params) {
           <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/color/40/000000/password.png'}}/>
         </View>
 
-        <TouchableOpacity style={styles.btnByRegister} onPress={() => this.onClickListener('restore_password')}>
+        <TouchableOpacity style={styles.btnByRegister} onPress={() => {Alert.alert('Okayy')}}>
             <Text style={styles.textByRegister}>By registering on this App you confirm that you have read and accept our policy</Text>
         </TouchableOpacity>
 
@@ -49,7 +49,7 @@ export function SignUp(params) {
         </TouchableOpacity>
 
 
-        <TouchableOpacity style={styles.buttonContainer} onPress={() => this.onClickListener('register')}>
+        <TouchableOpacity style={styles.buttonContainer} onPress={() => {navigation.navigate('Login')}}>
             <Text style={styles.btnText}>Have an account?</Text>
         </TouchableOpacity>
       </View>

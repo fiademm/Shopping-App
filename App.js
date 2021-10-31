@@ -12,6 +12,8 @@ import { Login } from './Login.js'
 import { SignUp } from './screens/SignUp.js';
 import { AcceptedOrder } from './screens/AcceptedOrder.js';
 import { CheckoutIcon } from './components/CheckoutIcon.js';
+import { Splash } from './screens/Splash.js';
+import { Welcome } from './screens/Welcome.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,8 +22,19 @@ function App() {
     <CartProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName = 'Login'
+          initialRouteName = 'Splash'
+          screenOptions={{headerShown: false}}
         >
+          <Stack.Screen name='Splash' component={Splash}
+          options={({ navigation }) => ({
+            title: 'Splash Screen',
+            headerTitleStyle: styles.headerTitle,
+          })}/>
+          <Stack.Screen name='Welcome' component={Welcome}
+          options={({ navigation }) => ({
+            title: 'Welcome',
+            headerTitleStyle: styles.headerTitle,
+          })}/>
           <Stack.Screen name='SignUp' component={SignUp}
           options={({ navigation }) => ({
             title: 'Sign Up',

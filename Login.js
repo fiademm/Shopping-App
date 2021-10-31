@@ -1,54 +1,58 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity, Alert } from "react-native";
+import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity, Alert, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { AntDesign } from "@expo/vector-icons";
-import { Link } from "@react-navigation/native";
+import { Entypo, Feather, Ionicons, FontAwesome } from '@expo/vector-icons';
+
 
 export function Login(params) {
   const navigation = params.navigation;
 
   return (
-    <View style={styles.container}>
-        <Image style={styles.bgImage} source={{ uri: "https://lorempixel.com/900/1400/nightlife/2/" }}/>
-        <View style={styles.inputContainer}>
-          <TextInput style={styles.inputs}
-              placeholder="Email"
-              keyboardType="email-address"
-              underlineColorAndroid='transparent'
-              onChangeText={(email) => this.setState({email})}/>
-          <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/nolan/40/000000/email.png'}}/>
-        </View>
-        
-        <View style={styles.inputContainer}>
-          <TextInput style={styles.inputs}
-              placeholder="Password"
-              secureTextEntry={true}
-              underlineColorAndroid='transparent'
-              onChangeText={(password) => this.setState({password})}/>
-          <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/nolan/40/000000/key.png'}}/>
-        </View>
+    <SafeAreaView style={styles.container}>
+        <ImageBackground style={styles.bgImage} source={require('./assets/wallpaper.jpg')}>
+          <View style={{marginLeft: '10%',}}>
+            <View style={styles.inputContainer}>
+            <TextInput style={styles.inputs}
+                placeholder="Email"
+                keyboardType="email-address"
+                underlineColorAndroid='transparent'
+                onChangeText={(email) => this.setState({email})}/>
+            <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/nolan/40/000000/email.png'}}/>
+          </View>
+          
+          <View style={styles.inputContainer}>
+            <TextInput style={styles.inputs}
+                placeholder="Password"
+                secureTextEntry={true}
+                underlineColorAndroid='transparent'
+                onChangeText={(password) => this.setState({password})}/>
+            <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/nolan/40/000000/key.png'}}/>
+          </View>
 
-        <TouchableOpacity style={styles.btnForgotPassword} onPress={() => Alert.alert('restore_password')}>
-            <Text style={styles.btnText}>Forgot your password?</Text>
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.btnForgotPassword} onPress={() => navigation.navigate('SignUp')}>
+              <Text style={styles.btnText}>Forgot your password?</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={[styles.buttonContainer, styles.loginButton]} 
-          onPress={() => {navigation.navigate('Products');
-          }}>
-          <Text style={styles.loginText}>Login</Text>
-        </TouchableOpacity>
+          <TouchableOpacity 
+            style={[styles.buttonContainer, styles.loginButton]} 
+            onPress={() => {navigation.navigate('Products');
+            }}>
+            <Text style={styles.loginText}>Login</Text>
+          </TouchableOpacity>
 
 
-        <TouchableOpacity 
-          style={styles.buttonContainer}
-          onPress={() => {navigation.navigate('SignUp');
-        }}
-        >
-            <Text style={styles.btnText}>Register</Text>
-        </TouchableOpacity>
-      </View>
+          <TouchableOpacity 
+            style={styles.buttonContainer}
+            onPress={() => {navigation.navigate('SignUp');
+          }}
+          >
+              <Text style={styles.btnText}>Register</Text>
+          </TouchableOpacity>
+          </View>
+        </ImageBackground>
+        <StatusBar style={"auto"}/>
+      </SafeAreaView>
   );
 }
 
@@ -130,9 +134,10 @@ const styles = StyleSheet.create({
   },
   bgImage:{
     flex: 1,
-    position: 'absolute',
+    position: "relative",
     width: '100%',
     height: '100%',
+    justifyContent: 'center',
   },
   btnText:{
     color:"white",

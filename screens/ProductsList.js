@@ -20,25 +20,27 @@ export function ProductsList ({navigation}) {
     );
   }
   
-  const [products, setProducts] = useState([]);
-
-  const categories = ['FOOTWEAR', 'PLAIN T-SHIRT', 'SHIRT', 'JEANS'];
+  
+  const categories = ['LONG', 'SHORT'];
   const [categoryIndex,setCategoryIndex] = React.useState(0)
   const CategoryList = () => {
     return (
       <View style={styles.categoryContainer}>
         {categories.map((item,index) => (
-            <TouchableOpacity 
-                key={index}
-                activeOpacity={0.8} 
-                onPress={() => setCategoryIndex(index)}
-            >
+          <TouchableOpacity 
+          key={index}
+          activeOpacity={0.8} 
+          onPress={() => setCategoryIndex(index)}
+          >
                 <Text style={[styles.categoryText, categoryIndex == index && styles.categoryTextSelected]}>{item}</Text>
             </TouchableOpacity>
         ))}
       </View>
     );
   };
+  
+
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     setProducts(getProducts());
@@ -59,7 +61,7 @@ export function ProductsList ({navigation}) {
             Fits First
           </Text>
           </View>
-            <Entypo name="shopping-cart" size={28} color="black" />
+            <Entypo name="shopping-cart" size={28} color="black" onPress={() => navigation.navigate('Cart')} />
       </View>
 
       <View style={{marginTop:30, flexDirection:"row"}}>
@@ -82,7 +84,7 @@ export function ProductsList ({navigation}) {
      />
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   header: {
