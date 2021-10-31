@@ -13,8 +13,8 @@ export function Splash (params) {
   return (
     <SafeAreaView style={styles.container}>
             <ImageBackground style={styles.bgImage} source={require('../assets/black.png')}>
-                <Image source={require('../assets/dhh.png')} style={{backgroundColor: 'black', height:500, width: "100%", resizeMode:"contain"}} />
-                <Image source={require('../assets/dhl.png')} style={{backgroundColor: 'black', height:100, width: "100%", resizeMode:'contain'}} />
+                <Image source={require('../assets/dhh.png')} style={{backgroundColor: 'black', flex: 0.5, width: "100%", resizeMode:"contain"}} />
+                <Image source={require('../assets/dhl.png')} style={{backgroundColor: 'black', width: "100%", resizeMode:'contain'}} />
                 <TouchableOpacity style={styles.continueBtn} onPress={() => navigation.navigate('Welcome')}>
                     <Text style={{fontWeight: "bold", fontSize: 17,}}>Continue</Text>
                 </TouchableOpacity>
@@ -36,26 +36,9 @@ const styles = StyleSheet.create({
         padding: 15,
         paddingHorizontal: 30,
         borderRadius: 30,
-        alignItems: "center"
-    },
-    buttonContainer: {
-      height:45,
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginBottom:20,
-      width:300,
-      borderRadius:30,
-      backgroundColor:'transparent'
-    },
-    btnByRegister: {
-      height:15,
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginVertical:20,
-      width:300,
-      backgroundColor:'transparent'
+        alignItems: "center",
+        margin: 20,
+        justifyContent: "flex-end",
     },
     bgImage:{
       flex: 1,
@@ -65,12 +48,5 @@ const styles = StyleSheet.create({
       height: Dimensions.get('window').height,
       justifyContent: "center",
       alignItems: "center",
-    },
-    btnText:{
-      color:"white",
-      fontWeight:'bold',
-      textShadowColor: 'rgba(0, 0, 0, 0.75)',
-      textShadowOffset: {width: -1, height: 1},
-      textShadowRadius: 10
     },
   }); 

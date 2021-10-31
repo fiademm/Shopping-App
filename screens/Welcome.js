@@ -10,8 +10,7 @@ export function Welcome (params) {
   return (
     <SafeAreaView style={styles.container}>
             <ImageBackground style={styles.bgImage} source={require('../assets/wallpaper.jpg')}>
-              <Image source={require('../assets/black.png')} />
-              <View style={{marginLeft: '10%'}}>
+              <View style={{marginLeft: '10%', marginBottom: '5%'}}>
               <TouchableOpacity style={styles.continueBtn} onPress={() => navigation.navigate('Login')}>
                     <Text style={{fontWeight: "bold", fontSize: 17,}}>Login</Text>
                 </TouchableOpacity>
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
         padding: 15,
         paddingHorizontal: 30,
         borderRadius: 30,
-        margin: 5,
+        margin: 10,
         width: 300,
         alignItems: "center",
     },
@@ -47,13 +46,6 @@ const styles = StyleSheet.create({
       position: 'relative',
       width: '100%',
       height: '100%',
-      justifyContent: "center",
-    },
-    btnText:{
-      color:"white",
-      fontWeight:'bold',
-      textShadowColor: 'rgba(0, 0, 0, 0.75)',
-      textShadowOffset: {width: -1, height: 1},
-      textShadowRadius: 10
+      justifyContent: "flex-end",
     },
   }); 

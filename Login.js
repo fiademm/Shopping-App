@@ -43,10 +43,9 @@ export function Login(params) {
 
 
           <TouchableOpacity 
-            style={styles.buttonContainer}
+            style={styles.buttonContainer} 
             onPress={() => {navigation.navigate('SignUp');
-          }}
-          >
+          }}>
               <Text style={styles.btnText}>Register</Text>
           </TouchableOpacity>
           </View>

@@ -23,33 +23,26 @@ function App() {
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName = 'Splash'
-          screenOptions={{headerShown: false}}
         >
           <Stack.Screen name='Splash' component={Splash}
           options={({ navigation }) => ({
-            title: 'Splash Screen',
-            headerTitleStyle: styles.headerTitle,
+            headerShown: false
           })}/>
           <Stack.Screen name='Welcome' component={Welcome}
           options={({ navigation }) => ({
-            title: 'Welcome',
-            headerTitleStyle: styles.headerTitle,
+            headerShown: false
           })}/>
           <Stack.Screen name='SignUp' component={SignUp}
           options={({ navigation }) => ({
-            title: 'Sign Up',
-            headerTitleStyle: styles.headerTitle,
+            headerShown: false
           })}/>
           <Stack.Screen name='Login' component={Login}
           options={({ navigation }) => ({
-            title: 'Login',
-            headerTitleStyle: styles.headerTitle,
+            headerShown: false
           })}/>
           <Stack.Screen name='Products' component={ProductsList} 
           options={({ navigation }) => ({
-            title: 'Products',
-            headerTitleStyle: styles.headerTitle,
-            headerRight: () => <CartIcon navigation={navigation}/>
+            headerShown: false
           })}/>
           <Stack.Screen name='ProductDetails' component={ProductDetails} 
           options={({ navigation }) => ({
