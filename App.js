@@ -23,7 +23,7 @@ function App() {
     <CartProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName = 'Splash'
+          initialRouteName = 'Checkout'
         >
           <Stack.Screen name='Splash' component={Splash}
           options={({ navigation }) => ({

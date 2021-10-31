@@ -8,7 +8,7 @@ export function CheckoutIcon({navigation}) {
     <View style={styles.container}>
       <Text style={styles.text} 
         onPress={() => {
-          navigation.navigate('AcceptedOrder');
+          navigation.navigate('Checkout');
         }}
       >
           Checkout
