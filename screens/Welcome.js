@@ -11,12 +11,14 @@ export function Welcome (params) {
     <SafeAreaView style={styles.container}>
             <ImageBackground style={styles.bgImage} source={require('../assets/wallpaper.jpg')}>
               <Image source={require('../assets/black.png')} />
-                <TouchableOpacity style={styles.continueBtn} onPress={() => navigation.navigate('Login')}>
+              <View style={{marginLeft: '10%'}}>
+              <TouchableOpacity style={styles.continueBtn} onPress={() => navigation.navigate('Login')}>
                     <Text style={{fontWeight: "bold", fontSize: 17,}}>Login</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.continueBtn} onPress={() => navigation.navigate('SignUp')}>
                     <Text style={{fontWeight: "bold", fontSize: 17,}}>Sign up</Text>
-                </TouchableOpacity>
+              </TouchableOpacity>
+              </View>
             </ImageBackground>
         <StatusBar style={"auto"}/>
     </SafeAreaView>
@@ -36,6 +38,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30,
         borderRadius: 30,
         margin: 5,
+        width: 300,
+        alignItems: "center",
     },
     
     bgImage:{
@@ -44,7 +48,6 @@ const styles = StyleSheet.create({
       width: '100%',
       height: '100%',
       justifyContent: "center",
-      alignItems: "center",
     },
     btnText:{
       color:"white",

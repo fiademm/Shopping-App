@@ -13,7 +13,8 @@ export function Splash (params) {
   return (
     <SafeAreaView style={styles.container}>
             <ImageBackground style={styles.bgImage} source={require('../assets/black.png')}>
-                <Image source={require('../assets/black.png')} />
+                <Image source={require('../assets/dhh.png')} style={{backgroundColor: 'black', height:500, width: "100%", resizeMode:"contain"}} />
+                <Image source={require('../assets/dhl.png')} style={{backgroundColor: 'black', height:100, width: "100%", resizeMode:'contain'}} />
                 <TouchableOpacity style={styles.continueBtn} onPress={() => navigation.navigate('Welcome')}>
                     <Text style={{fontWeight: "bold", fontSize: 17,}}>Continue</Text>
                 </TouchableOpacity>
@@ -35,6 +36,7 @@ const styles = StyleSheet.create({
         padding: 15,
         paddingHorizontal: 30,
         borderRadius: 30,
+        alignItems: "center"
     },
     buttonContainer: {
       height:45,
