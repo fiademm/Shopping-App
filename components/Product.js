@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, Image, View, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
 import { Entypo, Feather, FontAwesome, MaterialIcons } from '@expo/vector-icons';
 
-const width = Dimensions.get('screen').width/2-30;
+const width = Dimensions.get('screen').width/2 - 30;
 export function Product({name, price, color, image, onPress}) {
   return (
     <TouchableOpacity onPress={onPress}>
@@ -29,7 +29,7 @@ export function Product({name, price, color, image, onPress}) {
                 <Text style={{fontSize:22, color: '#fff', fontWeight:"bold"}}>+</Text>
             </View>
         </View>
-    </View>; 
+    </View>
 </TouchableOpacity>
   );
 }

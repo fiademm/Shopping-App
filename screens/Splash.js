@@ -14,7 +14,7 @@ export function Splash (params) {
     <SafeAreaView style={styles.container}>
             <ImageBackground style={styles.bgImage} source={require('../assets/black.png')}>
                 <Image source={require('../assets/dhh.png')} style={{backgroundColor: 'black', flex: 0.5, width: "100%", resizeMode:"contain"}} />
-                <Image source={require('../assets/dhl.png')} style={{backgroundColor: 'black', width: "100%", resizeMode:'contain'}} />
+                <Image source={require('../assets/dhl.png')} style={{backgroundColor: 'black', flex:0.2, width: "100%", resizeMode:'contain'}} />
                 <TouchableOpacity style={styles.continueBtn} onPress={() => navigation.navigate('Welcome')}>
                     <Text style={{fontWeight: "bold", fontSize: 17,}}>Continue</Text>
                 </TouchableOpacity>

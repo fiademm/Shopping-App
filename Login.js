@@ -8,16 +8,34 @@ import { Entypo, Feather, Ionicons, FontAwesome } from '@expo/vector-icons';
 export function Login(params) {
   const navigation = params.navigation;
 
+  const [email, setEmail] = useState(0);
+  const [password, setpassword] = useState(0);
+
+  const checkInput = (string) =>
+  {
+    if(typeof(email) !== "string"){  // check if the string variable is some type other than string
+      alert('Please enter email');
+      return;
+    }
+    if(typeof(password) !== "string") {
+      alert('Please enter password');
+      return;
+    }
+    else {
+      navigation.navigate('Products');
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container}>
         <ImageBackground style={styles.bgImage} source={require('./assets/wallpaper.jpg')}>
-          <View style={{marginLeft: '10%',}}>
-            <View style={styles.inputContainer}>
+          <View style={{marginLeft: '10%', marginBottom: '5%', justifyContent: "center", alignItems:"center"}}>
+          <View style={styles.inputContainer}>
             <TextInput style={styles.inputs}
                 placeholder="Email"
                 keyboardType="email-address"
                 underlineColorAndroid='transparent'
-                onChangeText={(email) => this.setState({email})}/>
+                onChangeText={(value) => setEmail(value)}/>
             <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/nolan/40/000000/email.png'}}/>
           </View>
           
@@ -26,7 +44,7 @@ export function Login(params) {
                 placeholder="Password"
                 secureTextEntry={true}
                 underlineColorAndroid='transparent'
-                onChangeText={(password) => this.setState({password})}/>
+                onChangeText={(value) => setpassword(value)}/>
             <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/nolan/40/000000/key.png'}}/>
           </View>
 
@@ -34,19 +52,11 @@ export function Login(params) {
               <Text style={styles.btnText}>Forgot your password?</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity 
-            style={[styles.buttonContainer, styles.loginButton]} 
-            onPress={() => {navigation.navigate('Products');
-            }}>
-            <Text style={styles.loginText}>Login</Text>
+          <TouchableOpacity style={styles.continueBtn} onPress={checkInput}>
+            <Text style={{fontWeight: "bold", fontSize: 17,}}>Login</Text>
           </TouchableOpacity>
-
-
-          <TouchableOpacity 
-            style={styles.buttonContainer} 
-            onPress={() => {navigation.navigate('SignUp');
-          }}>
-              <Text style={styles.btnText}>Register</Text>
+          <TouchableOpacity style={styles.continueBtn} onPress={() => navigation.navigate('SignUp')}>
+            <Text style={{fontWeight: "bold", fontSize: 17,}}>Register</Text>
           </TouchableOpacity>
           </View>
         </ImageBackground>
@@ -63,15 +73,25 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#DCDCDC',
   },
+  continueBtn: {
+    backgroundColor: '#fff',
+    padding: 15,
+    paddingHorizontal: 20,
+    borderRadius: 30,
+    margin: 10,
+    width: 250,
+    alignItems: "center",
+  },
   inputContainer: {
-    borderBottomColor: '#F5FCFF',
+    flexDirection: 'row',
     backgroundColor: '#FFFFFF',
+    padding: 15,
     borderRadius:30,
+    borderBottomColor: '#F5FCFF',
     borderBottomWidth: 1,
+    marginBottom:20,
     width:300,
     height:45,
-    marginBottom:20,
-    flexDirection: 'row',
     alignItems:'center',
 
     shadowColor: "#808080",
@@ -136,7 +156,7 @@ const styles = StyleSheet.create({
     position: "relative",
     width: '100%',
     height: '100%',
-    justifyContent: 'center',
+    justifyContent: "flex-end"
   },
   btnText:{
     color:"white",

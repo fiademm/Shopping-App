@@ -14,6 +14,7 @@ import { AcceptedOrder } from './screens/AcceptedOrder.js';
 import { CheckoutIcon } from './components/CheckoutIcon.js';
 import { Splash } from './screens/Splash.js';
 import { Welcome } from './screens/Welcome.js';
+import { Checkout } from './screens/Checkout.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -56,6 +57,11 @@ function App() {
             headerTitleStyle: styles.headerTitle,
             headerRight: () => <CheckoutIcon navigation={navigation}/>,
           })} />
+          <Stack.Screen name='Checkout' component={Checkout}
+          options={({ navigation }) => ({
+            title: 'Checkout',
+            headerTitleStyle: styles.headerTitle,
+          })}/>
           <Stack.Screen name='AcceptedOrder' component={AcceptedOrder}
           options={({ navigation }) => ({
             title: 'Succesful Order',

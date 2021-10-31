@@ -7,6 +7,29 @@ import { Link } from "@react-navigation/native";
 
 export function SignUp(params) {
   const navigation = params.navigation;
+  const [name, setName] = useState(0);
+  const [email, setEmail] = useState(0);
+  const [password, setpassword] = useState(0);
+
+  const checkInput = (string) =>
+  {
+    if(typeof(name) !== "string"){  // check if the string variable is some type other than string
+      alert('Please enter name');
+      return;
+    }
+    if(typeof(email) !== "string"){  // check if the string variable is some type other than string
+      alert('Please enter email');
+      return;
+    }
+    if(typeof(password) !== "string") {
+      alert('Please enter password');
+      return;
+    }
+    else {
+      navigation.navigate('Products');
+    }
+  };
+
 
   return (
     <View style={styles.container}>
@@ -15,7 +38,7 @@ export function SignUp(params) {
           <TextInput style={styles.inputs}
               placeholder="Full name"
               underlineColorAndroid='transparent'
-              onChangeText={(email) => this.setState({email})}/>
+              onChangeText={(value) => setName(value)}/>
           <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/color/40/000000/circled-user-male-skin-type-3.png'}}/>
         </View>
 
@@ -24,7 +47,7 @@ export function SignUp(params) {
               placeholder="Email"
               keyboardType="email-address"
               underlineColorAndroid='transparent'
-              onChangeText={(email) => this.setState({email})}/>
+              onChangeText={(value) => setEmail(value)}/>
           <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/flat_round/40/000000/secured-letter.png'}}/>
         </View>
         
@@ -33,7 +56,7 @@ export function SignUp(params) {
               placeholder="Password"
               secureTextEntry={true}
               underlineColorAndroid='transparent'
-              onChangeText={(password) => this.setState({password})}/>
+              onChangeText={(value) => setpassword(value)}/>
           <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/color/40/000000/password.png'}}/>
         </View>
 
@@ -43,8 +66,8 @@ export function SignUp(params) {
 
         <TouchableOpacity 
             style={[styles.buttonContainer, styles.loginButton]} 
-            onPress={() => {navigation.navigate('Products');
-        }}>
+            onPress={checkInput}
+        >
           <Text style={styles.loginText}>Login</Text>
         </TouchableOpacity>
 
