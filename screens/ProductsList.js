@@ -53,7 +53,7 @@ export function ProductsList ({navigation}) {
 
                 <View style={{marginTop:30, flexDirection:"row"}}>
                     <View style={style.searchContainer} >
-                        <Feather name="search" size={25} color="black" style={{marginLeft:20}} />
+                        <Feather name="search" size={25} color="black" style={{marginLeft:20, marginRight:10}} />
                         <TextInput placeholder="Search" style={style.input} />
                     </View>
                     <View style={style.sortBtn}>

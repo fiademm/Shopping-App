@@ -26,8 +26,8 @@ export function Product({name, price, color, image, onPress}) {
 
         <View style={{flexDirection:"row", justifyContent: "space-between", marginTop:5}}>
             <Text style={{fontSize:19, fontWeight:"bold",}}>${price}</Text>
-            <View style={{height:25, width:25, backgroundColor: '#00b761', borderRadius:5, justifyContent:"center", alignItems:"center"}}>
-                <Text style={{fontSize:22, color: '#fff', fontWeight:"bold", alignItems: 'center'}}>+</Text>
+            <View style={{height:25, width:25, backgroundColor: '#000', borderRadius:5, justifyContent:"center", alignItems:"center"}}>
+                <Text style={{fontSize:22, color: '#fff', fontWeight:"bold", justifyContent:'center', alignItems: 'center'}}>+</Text>
             </View>
         </View>
     </View>

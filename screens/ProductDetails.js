@@ -8,6 +8,7 @@ import {
   Button, 
   StyleSheet
   } from 'react-native';
+import { Ionicons, Entypo } from "@expo/vector-icons";
 
 import { getProduct } from '../services/ProductsService.js';
 import { CartContext } from '../CartContext';
@@ -28,65 +29,49 @@ export function ProductDetails({route}) {
   }
   
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{flex:1, backgroundColor:colors.white}}>
       <ScrollView>
-      <Image
-          style={styles.image}
-          source={product.image}
-        />
-        <View style={styles.infoContainer}>
-          <Text style={styles.name}>{product.name}</Text>
-          <Text style={styles.price}>$ {product.price}</Text>
-          <Text style={styles.description}>{product.description}</Text>
-            <Button
-            onPress={onAddToCart}
-            title="Add to cart"
-            / >
-        </View>
+            <View style={style.imageContainer}>
+                <Image source={product.image} style={{resizeMode:"contain", width:'100%', flex:1}} />
+            </View>
+            <View style={style.detailsContainer}>
+                <View 
+                    style={{
+                        marginLeft:20, 
+                        flexDirection:"row", 
+                        alignItems:"flex-end"
+                    }}>
+                        <View style={style.line}/>
+                        <Text style={{fontSize:18, fontWeight:"bold"}}>Best Choice</Text>
+                </View>
+                <View style={{marginLeft:20, marginTop:20, flexDirection:'row', justifyContent:"space-between", alignItems:"center"}}>
+                    <Text style={{fontSize:22, fontWeight:"bold"}}> {product.name} </Text>
+                    <View style={style.priceTag}>
+                        <Text style={{marginLeft:15, color: colors.white, fontWeight:"bold", fontSize:16}}> {product.price} </Text>
+                    </View>
+                </View>
+                <View style={{paddingHorizontal:20, marginTop:10, }}>
+
+                    <Text style={{fontSize:20, fontWeight:"bold"}}>Description</Text>
+                    <Text style={{color:"grey", fontSize:16, lineHeight:22, marginTop:10}}> {product.description} </Text>
+
+                    <View style={{marginTop:20, flexDirection:"row", justifyContent:"space-between", marginBottom:10 }}>
+                        <View style={{flexDirection:"row", alignItems:"center"}}>
+                            <View style={style.borderBtn}>
+                                <Text style={style.borderBtnText}>-</Text>
+                            </View>
+                            <Text style={{fontSize:20, marginHorizontal:10, fontWeight:"bold",}}> 1 </Text>
+                            <View style={style.borderBtn}>
+                                <Text onPress={onAddToCart} style={style.borderBtnText}>+</Text>
+                            </View>
+                        </View>
+                    </View>
+                </View>
+            </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  card: {
-    backgroundColor: 'white',
-    borderRadius: 16,
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    shadowColor: 'black',
-    shadowOffset: {
-      height: 0,
-      width: 0,
-    },
-    elevation: 1,
-    marginVertical: 20,
-  },
-  image: {
-    height: 300,
-    width: '100%',
-    resizeMode: 'contain',
-    flex:1  
-  },
-  infoContainer: {
-    padding: 16,
-  },
-  name: {
-    fontSize: 22,
-    fontWeight: 'bold',
-  },
-  price: {
-    fontSize: 16,
-    fontWeight: '600',
-    marginBottom: 8,
-  },
-  description: {
-    fontSize: 16,
-    fontWeight: '400',
-    color: '#787878',
-    marginBottom: 16,
-  },
-});
 
 
 const style = StyleSheet.create({
@@ -97,13 +82,13 @@ const style = StyleSheet.create({
         justifyContent: "space-between",
     },
     imageContainer: {
-        flex: 0.45,
+        flex: 0.50,
         marginTop: 20,
         justifyContent: "center",
         alignItems: "center",
     },
     detailsContainer: {
-        flex: 0.55,
+        flex: 0.50,
         backgroundColor: colors.light,
         marginHorizontal: 7,
         marginBottom: 7,
@@ -119,7 +104,7 @@ const style = StyleSheet.create({
         marginRight: 3,
     },
     priceTag: {
-        backgroundColor: colors.green,
+        backgroundColor: '#000',
         width: 80,
         height: 40,
         borderTopLeftRadius: 25,
@@ -142,7 +127,7 @@ const style = StyleSheet.create({
     buyBtn: {
         width: 150,
         height: 50,
-        backgroundColor: colors.green,
+        backgroundColor: '#000',
         justifyContent:"center",
         alignItems: "center",
         borderRadius: 30,
