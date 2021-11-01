@@ -77,16 +77,6 @@ export function ProductsList ({navigation}) {
   );
 }
 
-const styles = StyleSheet.create({
-  productsList: {
-    backgroundColor: '#eeebbb',
-  },
-  productsListContainer: {
-    backgroundColor: '#333',
-    paddingVertical: 8,
-    marginHorizontal: 8,
-  },
-});
 
 const style = StyleSheet.create({
   header: {

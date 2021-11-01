@@ -16,6 +16,7 @@ import { Splash } from './screens/Splash.js';
 import { Welcome } from './screens/Welcome.js';
 import { Checkout } from './screens/Checkout.js';
 import { CCInfo } from './screens/CCInfo.js';
+import { colors } from './colors';
 
 const Stack = createNativeStackNavigator();
 
@@ -56,7 +57,7 @@ function App() {
           options={({ navigation }) => ({
             title: 'My cart',
             headerTitleStyle: styles.headerTitle,
-            headerRight: () => <CheckoutIcon navigation={navigation}/>,
+            headerRight: () => <CheckoutIcon navigation={navigation} />,
           })} />
           <Stack.Screen name='Checkout' component={Checkout}
           options={({ navigation }) => ({

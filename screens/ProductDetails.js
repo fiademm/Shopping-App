@@ -11,6 +11,7 @@ import {
 
 import { getProduct } from '../services/ProductsService.js';
 import { CartContext } from '../CartContext';
+import colors from '../colors';
 
 export function ProductDetails({route}) {
   const { productId } = route.params;
@@ -29,7 +30,7 @@ export function ProductDetails({route}) {
   return (
     <SafeAreaView>
       <ScrollView>
-        <Image
+      <Image
           style={styles.image}
           source={product.image}
         />
@@ -64,6 +65,8 @@ const styles = StyleSheet.create({
   image: {
     height: 300,
     width: '100%',
+    resizeMode: 'contain',
+    flex:1  
   },
   infoContainer: {
     padding: 16,
@@ -83,4 +86,65 @@ const styles = StyleSheet.create({
     color: '#787878',
     marginBottom: 16,
   },
+});
+
+
+const style = StyleSheet.create({
+    header: {
+        paddingHorizontal:20,
+        marginTop:20,
+        flexDirection:"row",
+        justifyContent: "space-between",
+    },
+    imageContainer: {
+        flex: 0.45,
+        marginTop: 20,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    detailsContainer: {
+        flex: 0.55,
+        backgroundColor: colors.light,
+        marginHorizontal: 7,
+        marginBottom: 7,
+        borderRadius: 2,
+        marginTop: 30,
+        paddingTop: 30,
+    },
+    line: {
+        width:25,
+        height:2,
+        backgroundColor: colors.dark,
+        marginBottom: 5,
+        marginRight: 3,
+    },
+    priceTag: {
+        backgroundColor: colors.green,
+        width: 80,
+        height: 40,
+        borderTopLeftRadius: 25,
+        borderBottomLeftRadius: 25,
+        justifyContent: 'center',
+    },
+    borderBtn: {
+        borderColor: "grey",
+        borderWidth: 1,
+        borderRadius: 5,
+        height: 40,
+        width: 60,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    borderBtnText: {
+        fontWeight: "bold",
+        fontSize: 28,
+    },
+    buyBtn: {
+        width: 150,
+        height: 50,
+        backgroundColor: colors.green,
+        justifyContent:"center",
+        alignItems: "center",
+        borderRadius: 30,
+    },
 });
