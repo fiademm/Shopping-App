@@ -24,7 +24,7 @@ function App() {
     <CartProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName = 'CCInfo'
+          initialRouteName = 'Splash'
         >
           <Stack.Screen name='Splash' component={Splash}
           options={({ navigation }) => ({
@@ -69,10 +69,7 @@ function App() {
             headerTitleStyle: styles.headerTitle,
           })}/>
           <Stack.Screen name='AcceptedOrder' component={AcceptedOrder}
-          options={({ navigation }) => ({
-            title: 'Succesful Order',
-            headerTitleStyle: styles.headerTitle,
-          })}/>
+          options={{headerShown: false}}/>
         </Stack.Navigator>
       </NavigationContainer>
     </CartProvider>

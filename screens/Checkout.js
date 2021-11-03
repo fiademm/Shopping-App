@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity, Alert, ImageBackground } from "react-native";
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export function Checkout(params) {
@@ -90,6 +90,7 @@ export function Checkout(params) {
           </TouchableOpacity>
         </View>
       </ImageBackground>
+      <StatusBar style={"auto"}/>
     </SafeAreaView>
   );
 }

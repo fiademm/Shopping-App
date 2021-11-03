@@ -20,7 +20,7 @@ export function Product({name, price, color, image, onPress}) {
             </View>
         </View>
         <View style={{height: 100, alignItems: "center"}}>
-            <Image style={{ flex:1, width: '100%', height: '30%', resizeMode:"contain"}} source={image} />
+            <Image style={{ flex:1, width: '100%', resizeMode:"contain"}} source={image} />
         </View>
         <Text style={{fontWeight:"bold", fontSize: 17, marginTop: 10}}> {name + ' - ' + color} </Text>
 

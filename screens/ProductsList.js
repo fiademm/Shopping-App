@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import { View, Text, Dimensions, TextInput, FlatList, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Entypo, Feather, FontAwesome } from '@expo/vector-icons';
+import { Entypo, MaterialIcons, Feather, FontAwesome } from '@expo/vector-icons';
 
 
 import { Product } from '../components/Product.js';
 import { getProducts } from '../services/ProductsService.js';
 import colors from '../colors.js'
+
 
 const width = Dimensions.get('screen').width/2-30;
 export function ProductsList ({navigation}) {
@@ -31,24 +32,24 @@ export function ProductsList ({navigation}) {
     style={{
       flex:1, 
       paddingHorizontal:20, 
-      backgroundColor: colors.white,
+      backgroundColor: colors.dark,
     }}>
       <View style={style.header}>
                     <View>
                         <Text 
                             style={{
-                                fontSize:25, fontWeight:"bold"
+                                fontSize:25, fontStyle: 'italic', fontWeight:"bold"
                             }}>
-                                Welcome to the
+                                welcome to the
                         </Text>
                         <Text 
                             style={{
-                                fontSize:38, fontWeight:"bold", fontStyle:'italic', color: 'darkgrey'
+                                fontSize:38, fontWeight:"bold", color: colors.white, textShadowColor: colors.dark, textShadowRadius: 10
                             }}>
                                 Drip House
                         </Text>
                     </View>
-                    <Entypo name="shopping-cart" size={28} color="black" onPress={() => navigation.navigate('Cart')} />
+                    <Entypo name="shopping-cart" size={40} style={{marginTop: 20}} color="black" onPress={() => navigation.navigate('Cart')} />
                 </View>
 
                 <View style={{marginTop:30, marginBottom:10, flexDirection:"row"}}>
@@ -83,6 +84,11 @@ const style = StyleSheet.create({
       marginTop: 20,
       flexDirection: "row",
       justifyContent: "space-between",
+      backgroundColor: colors.white,
+      padding: 20,
+      borderRadius: 10, 
+      borderBottomLeftRadius: 20,
+      borderBottomRightRadius: 20,
   },
   searchContainer: {
       height: 50,

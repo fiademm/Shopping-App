@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity, Alert, ImageBackground } from "react-native";
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export function CCInfo(params) {
@@ -66,7 +66,7 @@ export function CCInfo(params) {
             <View style={styles.abinputContainer}>
               <TextInput 
                 style = {styles.textInput}
-                placeholder = "CVC/CVV"
+                placeholder = "CVC-CVV"
                 underlineColorAndroid= "transparent"
                 onChangeText={(value) => setCVC(value)}
               />
@@ -78,6 +78,7 @@ export function CCInfo(params) {
           </TouchableOpacity>
         </View>
       </ImageBackground>
+      <StatusBar style={"auto"}/>
     </SafeAreaView>
   );
 }
@@ -131,6 +132,7 @@ const styles = StyleSheet.create({
       margin: 10,
       width: 250,
       alignItems: "center",
+      marginTop: 20
     },
     bgImage:{
       flex:1,
