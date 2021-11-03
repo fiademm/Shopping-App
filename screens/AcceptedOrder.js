@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { BackHandler } from 'react-native';
+import { Entypo } from '@expo/vector-icons';
 
 export function AcceptedOrder (params) {
     const navigation = params.navigation;
@@ -19,9 +20,9 @@ export function AcceptedOrder (params) {
         style={styles.container}>
           <ImageBackground style={styles.bgImage} source={require('../assets/black.png')}>
             <View style={{backgroundColor: '#fafafa', borderRadius:15, marginHorizontal:15, marginBottom:20, justifyContent: 'center', alignItems: 'center'}}>
-            <Image 
-                style={styles.icon} 
-                source={{uri: "https://img.icons8.com/color/70/000000/facebook-like.png"}} />
+            <View style={{marginTop: 10}}>
+              <Entypo name="thumbs-up" size={40} color="black" />
+            </View>
             <Text style={styles.title}>
                 Congratulations, your order has been accepted.
             </Text>
@@ -80,7 +81,6 @@ const styles = StyleSheet.create({
     marginTop:5,
     color: "#000111",
     padding:10,
-    fontStyle: 'italic'
   },
   description: {
     textAlign: 'center',
@@ -95,7 +95,8 @@ const styles = StyleSheet.create({
     color: "#000",
     fontSize:19,
     margin: 5,
-    fontStyle: 'italic',
+    marginTop: 11,
+    fontWeight: 'bold',
     borderRadius: 15,
     padding: 15
   },

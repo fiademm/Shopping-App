@@ -19,6 +19,7 @@ export function ProductDetails({route}) {
   const [product, setProduct] = useState({});
   
   const { addItemToCart } = useContext(CartContext);
+  const { removeItemFromCart } = useContext(CartContext);
   
   useEffect(() => {
     setProduct(getProduct(productId));
@@ -26,6 +27,9 @@ export function ProductDetails({route}) {
   
   function onAddToCart() {
     addItemToCart(product.id);
+  }
+  function onRemoveFromCart() {
+      removeItemFromCart(product.id);
   }
   
   return (
@@ -60,12 +64,12 @@ export function ProductDetails({route}) {
 
                     <View style={{marginTop:20, flexDirection:"row", alignItems:'center', justifyContent:"center", marginBottom:10 }}>
                         <View style={{flexDirection:"row", alignItems:"center"}}>
-                            <TouchableOpacity style={style.borderBtn}>
+                            <TouchableOpacity style={style.borderBtn} onPress={onRemoveFromCart}>
                                 <Text style={style.borderBtnText}>-</Text>
                             </TouchableOpacity>
                             <Text style={{fontSize:20, color: colors.white, marginHorizontal:10, fontWeight:"bold",}}> 1 </Text>
-                            <TouchableOpacity style={style.borderBtn}>
-                                <Text onPress={onAddToCart} style={style.borderBtnText}>+</Text>
+                            <TouchableOpacity style={style.borderBtn} onPress={onAddToCart}>
+                                <Text style={style.borderBtnText}>+</Text>
                             </TouchableOpacity>
                         </View>
                     </View>

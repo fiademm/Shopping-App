@@ -6,7 +6,7 @@ const PRODUCTS = [
         color: "Dark Blue",
         size: 41,
         image: require('../assets/ldblue.png'),
-        description: 'Just as the name implies, a very fast bike indeed.'
+        description: 'Long dark blue converse shoes'
     },
     {
         id: 101,
@@ -15,7 +15,7 @@ const PRODUCTS = [
         color: 'All Black',
         size: 42,
         image: require('../assets/lablack.png'),
-        description: 'A cupcake (also British English: fairy cake; Hiberno-English: bun; Australian English: fairy cake or patty cake[1]) is a small cake designed to serve one person.'
+        description: 'Long plain black converse shoes, no other color attached to it.'
     },
     {
         id: 102,
@@ -24,7 +24,7 @@ const PRODUCTS = [
         color: 'Yellow',
         size: 42,
         image: require('../assets/syellow.png'),
-        description: 'A cupcake (also British English: fairy cake; Hiberno-English: bun; Australian English: fairy cake or patty cake[1]) is a small cake designed to serve one person.'
+        description: 'Nice short yellow converse shoes.'
     },
     {
         id: 103,
@@ -33,7 +33,7 @@ const PRODUCTS = [
         color: 'White',
         size: 42,
         image: require('../assets/lwhite.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        description: 'Long all white converse shoes, no black or any other colors.'
     },
     {
         id: 104,
@@ -42,7 +42,7 @@ const PRODUCTS = [
         color: 'Dark Green',
         size: 41,
         image: require('../assets/ldgreen.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        description: 'Nice long dark green converse shoes.'
     },
     {
         id: 105,
@@ -51,7 +51,7 @@ const PRODUCTS = [
         color: 'Black',
         size: 40,
         image: require('../assets/lblack41.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        description: 'Long black and white converse shoes.'
     },
     {
         id: 106,
@@ -60,7 +60,7 @@ const PRODUCTS = [
         color: 'Red',
         size: 40,
         image: require('../assets/lred.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        description: 'Nice long red converse shoes'
     },
     {
         id: 107,
@@ -69,16 +69,16 @@ const PRODUCTS = [
         color: 'Red',
         size: 39,
         image: require('../assets/sred39.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        description: 'Nice red low-top converse shoes.'
     },
     {
         id: 108,
-        name: 'Long Converse Plain',
+        name: 'Long Converse',
         price: 10.00,
         color: 'Black',
         size: 40.5,
         image: require('../assets/lpblack.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        description: 'Nice black high top converse shoes.'
     },
     {
         id: 109,
@@ -87,7 +87,7 @@ const PRODUCTS = [
         color: 'Black',
         size: 41,
         image: require('../assets/lblack.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        description: 'Nice high top black and white converse shoes.'
     },
     {
         id: 110,
@@ -96,16 +96,16 @@ const PRODUCTS = [
         color: 'Sea Blue',
         size: 41,
         image: require('../assets/lblue.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        description: 'Nice sea blue high top converse shoes'
     },
     {
         id: 111,
         name: 'Short converse',
         price: 10.00,
-        color: 'Sea Blue',
+        color: 'Black & White',
         size: 41,
         image: require('../assets/bwstar.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        description: 'Nice balck and white starred low-top converse shoes'
     },
     {
         id: 112,
@@ -114,16 +114,16 @@ const PRODUCTS = [
         color: 'Grey',
         size: 42,
         image: require('../assets/lgrey.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        description: 'Nice long grey converse shoes'
     },
     {
         id: 113,
         name: 'Long converse',
         price: 10.00,
-        color: 'Grey',
+        color: 'Yellow',
         size: 40,
         image: require('../assets/lyellow.png'),
-        description: 'A model car, or toy car, is a miniature representation of an automobile. Other miniature motor vehicles, such as trucks, buses, or even ATVs, etc. are often included in this general category.'
+        description: 'Nice long yellow converse shoes.'
     },
 ];
 

@@ -29,7 +29,30 @@ export function CartProvider(props) {
           });
       }
     });
-
+  }
+  
+  function removeItemFromCart(id) {
+    const product = getProduct(id);
+    setItems((prevItems) => {
+      const item = prevItems.find((item) => (item.id == id));
+      if(!item) {
+          return [...prevItems, {
+              id,
+              qty: 1,
+              product,
+              totalPrice: product.price 
+          }];
+      }
+      else { 
+          return prevItems.map((item) => {
+            if(item.id == id) {
+              item.qty--;
+              item.totalPrice -= product.price;
+            }
+            return item;
+          });
+      }
+    });
   }
 
   function getItemsCount() {
@@ -42,7 +65,7 @@ export function CartProvider(props) {
   
   return (
     <CartContext.Provider 
-      value={{items, setItems, getItemsCount, addItemToCart, getTotalPrice}}>
+      value={{items, setItems, getItemsCount, addItemToCart, removeItemFromCart, getTotalPrice}}>
       {props.children}
     </CartContext.Provider>
   );
