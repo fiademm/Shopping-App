@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, Image, View, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
-import { Entypo, Feather, FontAwesome, MaterialIcons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 import colors from '../colors.js';
 
 const width = Dimensions.get('screen').width/2 - 30;
@@ -26,7 +26,7 @@ export function Product({name, price, color, image, onPress}) {
 
         <View style={{flexDirection:"row", justifyContent: "space-between", marginTop:5}}>
             <Text style={{fontSize:19, fontWeight:"bold",}}>${price}</Text>
-            <View style={{height:25, width:25, backgroundColor: '#000', borderRadius:5, justifyContent:"center", alignItems:"center"}}>
+            <View style={{height:28, width:25, backgroundColor: '#000', borderRadius:5, justifyContent:"center", alignItems:"center"}}>
                 <Text style={{fontSize:22, color: '#fff', fontWeight:"bold", justifyContent:'center', alignItems: 'center'}}>+</Text>
             </View>
         </View>

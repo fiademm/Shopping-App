@@ -54,21 +54,23 @@ export function CCInfo(params) {
             onChangeText={(value) => setHolderName(value)}
           />
           </View>
-          <View style={styles.inputContainer}>
-          <TextInput 
-            style = {styles.textInput}
-            placeholder = "Expiry date (Month - Year)"
-            underlineColorAndroid= "transparent"
-            onChangeText={(value) => setEDate(value)}
-          />
+          <View style={{flexDirection: "row"}}>
+            <View style={styles.ainputContainer}>
+              <TextInput 
+                style = {styles.textInput}
+                placeholder = "Expiry date (MM/YY)"
+                underlineColorAndroid= "transparent"
+                onChangeText={(value) => setEDate(value)}
+              />
+            </View>
+            <View style={styles.abinputContainer}>
+              <TextInput 
+                style = {styles.textInput}
+                placeholder = "CVC/CVV"
+                underlineColorAndroid= "transparent"
+                onChangeText={(value) => setCVC(value)}
+              />
           </View>
-          <View style={styles.inputContainer}>
-          <TextInput 
-            style = {styles.textInput}
-            placeholder = "CVC/CVV"
-            underlineColorAndroid= "transparent"
-            onChangeText={(value) => setCVC(value)}
-          />
           </View>
           
           <TouchableOpacity onPress={checkInput} style={styles.continueBtn}>
@@ -96,7 +98,25 @@ const styles = StyleSheet.create({
       margin: 10,
       padding: 5,
       paddingHorizontal: 20,
-      width: 350,
+      width: 370,
+      borderRadius: 10,
+    },
+    ainputContainer: {
+      backgroundColor: 'white',
+      margin: 5,
+      marginTop: 10,
+      padding: 5,
+      paddingHorizontal: 15,
+      width: 220,
+      borderRadius: 10,
+    },
+    abinputContainer: {
+      backgroundColor: 'white',
+      margin: 5,
+      marginTop: 10,
+      padding: 5,
+      paddingHorizontal: 15,
+      width: 130,
       borderRadius: 10,
     },
     textInput: {

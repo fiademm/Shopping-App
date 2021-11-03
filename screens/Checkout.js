@@ -42,21 +42,23 @@ export function Checkout(params) {
     <SafeAreaView style={styles.container}>
       <ImageBackground source={require('../assets/wallpaper.jpg')} style={styles.bgImage}>
         <View style={styles.mainContainer}>
-          <View style={styles.inputContainer}>
+          <View style={styles.ainputContainer}>
+            <View style={styles.labinputContainer}>
             <TextInput 
               style = {styles.textInput}
               placeholder = "First name"
               underlineColorAndroid= "transparent"
               onChangeText={(value) => setFName(value)}
             />
-          </View>
-          <View style={styles.inputContainer}>
+            </View>
+            <View style={styles.rabinputContainer}>
             <TextInput 
               style = {styles.textInput}
               placeholder = "Last name"
               underlineColorAndroid= "transparent"
               onChangeText={(value) => setLname(value)}
             />
+            </View>
           </View>
           <View style={styles.inputContainer}>
           <TextInput 
@@ -107,8 +109,29 @@ const styles = StyleSheet.create({
       backgroundColor: 'white',
       margin: 10,
       paddingHorizontal: 20,
-      width: 280,
+      width: 370,
       borderRadius: 10,
+    },
+    ainputContainer: {
+      flexDirection: "row",
+    },
+    labinputContainer: {
+      backgroundColor: 'white',
+      margin: 5,
+      paddingHorizontal: 10,
+      width: 180,
+      borderRadius: 10,
+    },
+    rabinputContainer: {
+      backgroundColor: 'white',
+      margin: 5,
+      paddingHorizontal: 10,
+      width: 180,
+      borderRadius: 10,
+    },
+    textInput: {
+      padding: 15,
+      fontSize: 15,
     },
     textInput: {
       padding: 15,

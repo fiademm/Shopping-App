@@ -16,7 +16,6 @@ import { Splash } from './screens/Splash.js';
 import { Welcome } from './screens/Welcome.js';
 import { Checkout } from './screens/Checkout.js';
 import { CCInfo } from './screens/CCInfo.js';
-import { colors } from './colors';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,7 +24,7 @@ function App() {
     <CartProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName = 'Products'
+          initialRouteName = 'CCInfo'
         >
           <Stack.Screen name='Splash' component={Splash}
           options={({ navigation }) => ({

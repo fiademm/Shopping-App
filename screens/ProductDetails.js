@@ -5,10 +5,9 @@ import {
   View, 
   ScrollView, 
   SafeAreaView, 
-  Button, 
-  StyleSheet
+  StyleSheet,
+  TouchableOpacity
   } from 'react-native';
-import { Ionicons, Entypo } from "@expo/vector-icons";
 
 import { getProduct } from '../services/ProductsService.js';
 import { CartContext } from '../CartContext';
@@ -47,15 +46,16 @@ export function ProductDetails({route}) {
                 <View style={{marginLeft:20, marginTop:20, flexDirection:'row', justifyContent:"space-between", alignItems:"center"}}>
                     <Text style={{fontSize:22, fontWeight:"bold"}}> {product.name} </Text>
                     <View style={style.priceTag}>
-                        <Text style={{marginLeft:15, color: colors.white, fontWeight:"bold", fontSize:16}}> {product.price} </Text>
+                        <Text style={{marginLeft:15, color: colors.white, fontWeight:"bold", fontSize:16}}>$  {product.price} </Text>
                     </View>
                 </View>
-                <View style={{paddingHorizontal:20, marginTop:10, }}>
 
+
+                <View style={{paddingHorizontal:20, marginTop:10, }}>
                     <Text style={{fontSize:20, fontWeight:"bold"}}>Description</Text>
                     <Text style={{color:"grey", fontSize:16, lineHeight:22, marginTop:10}}> {product.description} </Text>
 
-                    <View style={{marginTop:20, flexDirection:"row", justifyContent:"space-between", marginBottom:10 }}>
+                    <View style={{marginTop:20, flexDirection:"row", alignItems:'center', justifyContent:"center", marginBottom:10 }}>
                         <View style={{flexDirection:"row", alignItems:"center"}}>
                             <View style={style.borderBtn}>
                                 <Text style={style.borderBtnText}>-</Text>
@@ -66,6 +66,27 @@ export function ProductDetails({route}) {
                             </View>
                         </View>
                     </View>
+                </View>
+                <View style={style.starContainer}>
+                    <Image style={style.star} source={{uri:"https://img.icons8.com/color/48/000000/filled-star--v1.png"}}/>
+                    <Image style={style.star} source={{uri:"https://img.icons8.com/color/48/000000/filled-star--v1.png"}}/>
+                    <Image style={style.star} source={{uri:"https://img.icons8.com/color/48/000000/star-half-empty.png"}}/>
+                    <Image style={style.star} source={{uri:"https://img.icons8.com/color/40/000000/star.png"}}/>
+                    <Image style={style.star} source={{uri:"https://img.icons8.com/color/40/000000/star.png"}}/>
+                </View>
+                <View style={style.contentColors}>
+                    <TouchableOpacity style={[style.btnColor, {backgroundColor:"#00BFFF"}]}></TouchableOpacity> 
+                    <TouchableOpacity style={[style.btnColor, {backgroundColor:"#FF1493"}]}></TouchableOpacity> 
+                    <TouchableOpacity style={[style.btnColor, {backgroundColor:"#00CED1"}]}></TouchableOpacity> 
+                    <TouchableOpacity style={[style.btnColor, {backgroundColor:"#228B22"}]}></TouchableOpacity> 
+                    <TouchableOpacity style={[style.btnColor, {backgroundColor:"#20B2AA"}]}></TouchableOpacity> 
+                    <TouchableOpacity style={[style.btnColor, {backgroundColor:"#FF4500"}]}></TouchableOpacity> 
+                </View>
+                <View style={style.contentSize}>
+                    <TouchableOpacity style={style.btnSize}><Text>39</Text></TouchableOpacity> 
+                    <TouchableOpacity style={style.btnSize}><Text>40</Text></TouchableOpacity> 
+                    <TouchableOpacity style={style.btnSize}><Text>41</Text></TouchableOpacity> 
+                    <TouchableOpacity style={style.btnSize}><Text>42</Text></TouchableOpacity> 
                 </View>
             </View>
       </ScrollView>
@@ -131,5 +152,47 @@ const style = StyleSheet.create({
         justifyContent:"center",
         alignItems: "center",
         borderRadius: 30,
+    },
+    starContainer:{
+        marginHorizontal:20, 
+        flexDirection:'row', 
+        marginTop:10,
+        justifyContent: 'center'
+    },
+    star:{
+        width:40,
+        height:40,
+    },
+    contentColors:{ 
+        justifyContent:'center', 
+        marginHorizontal:30, 
+        flexDirection:'row', 
+        marginTop:20
+    },
+    btnColor: {
+        height:30,
+        width:30,
+        borderRadius:30,
+        marginHorizontal:3
+    },
+    contentSize:{ 
+        justifyContent:'center', 
+        marginHorizontal:30, 
+        flexDirection:'row', 
+        marginTop:20
+    },
+    btnSize: {
+        height:40,
+        width:40,
+        borderRadius:40,
+        borderColor:'#778899',
+        borderWidth:1,
+        marginHorizontal:3,
+        backgroundColor:'white',
+    
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 10
     },
 });

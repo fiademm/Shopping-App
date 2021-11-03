@@ -1,10 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  Platform,
   StyleSheet,
-  ListView,
-  TouchableOpacity,
   View,
   Image,
   Text,
@@ -23,15 +20,18 @@ export function AcceptedOrder (params) {
         <Text 
             style={styles.title}
         >
-            Congratulation, your order is accepted
+            Congratulations, your order is successfully accepted.
         </Text>
-        <Text 
-            style={styles.description}
-        >
-            Lorem ipsum dolor sit amet, sed te sumo euismod, doming molestiae consetetur nec ne. Cu quem aeterno labores eos
+        <View>
+        <Text style={styles.description}>
+            Thank you for shopping with the Drip House, we look foward to seeing you next time. We hope you enjoy the product.
         </Text>
+        <Text style={styles.description}>
+            We wish you all the best.
+        </Text>
+        </View>
         <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => {navigation.navigate('Products');}}>
-          <Text style={styles.buttonText}>Continue</Text>
+          <Text style={styles.buttonText}>Continue shopping</Text>
         </TouchableHighlight>
       </View>
     )
@@ -55,11 +55,10 @@ const styles = StyleSheet.create({
     color: "#5F6D7A"
   },
   description: {
-    marginTop:20,
     textAlign: 'center',
     color: "#A9A9A9",
-    fontSize:16,
-    margin:40,
+    fontSize:17,
+    margin: 5,
   },
   buttonContainer: {
     height:45,
@@ -69,6 +68,7 @@ const styles = StyleSheet.create({
     marginBottom:20,
     width:250,
     borderRadius:30,
+    margin: 10
   },
   loginButton: {
     backgroundColor: "#3498db",

@@ -43,7 +43,7 @@ export function ProductsList ({navigation}) {
                         </Text>
                         <Text 
                             style={{
-                                fontSize:38, fontWeight:"bold", color: colors.green
+                                fontSize:38, fontWeight:"bold", fontStyle:'italic', color: 'darkgrey'
                             }}>
                                 Drip House
                         </Text>
@@ -51,7 +51,7 @@ export function ProductsList ({navigation}) {
                     <Entypo name="shopping-cart" size={28} color="black" onPress={() => navigation.navigate('Cart')} />
                 </View>
 
-                <View style={{marginTop:30, flexDirection:"row"}}>
+                <View style={{marginTop:30, marginBottom:10, flexDirection:"row"}}>
                     <View style={style.searchContainer} >
                         <Feather name="search" size={25} color="black" style={{marginLeft:20, marginRight:10}} />
                         <TextInput placeholder="Search" style={style.input} />
