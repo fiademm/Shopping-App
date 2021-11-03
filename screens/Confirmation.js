@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
+import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity, Alert, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Entypo, Feather, Ionicons, FontAwesome } from '@expo/vector-icons';
 
 
 export function Login(params) {
@@ -12,7 +13,7 @@ export function Login(params) {
 
   const checkInput = (string) =>
   {
-    if(typeof(email) !== "string"){ 
+    if(typeof(email) !== "string"){  // check if the string variable is some type other than string
       alert('Please enter email');
       return;
     }

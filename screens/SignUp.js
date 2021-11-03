@@ -13,11 +13,11 @@ export function SignUp(params) {
 
   const checkInput = (string) =>
   {
-    if(typeof(name) !== "string"){  // check if the string variable is some type other than string
+    if(typeof(name) !== "string"){
       alert('Please enter name');
       return;
     }
-    if(typeof(email) !== "string"){  // check if the string variable is some type other than string
+    if(typeof(email) !== "string"){ 
       alert('Please enter email');
       return;
     }

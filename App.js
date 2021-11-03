@@ -68,6 +68,11 @@ function App() {
             title: 'Credit Card Information',
             headerTitleStyle: styles.headerTitle,
           })}/>
+          <Stack.Screen name='Confirmation' component={}
+          options={({ navigation }) => ({
+            title: 'Order Confirmation',
+            headerTitleStyle: styles.headerTitle,
+          })}/>
           <Stack.Screen name='AcceptedOrder' component={AcceptedOrder}
           options={{headerShown: false}}/>
         </Stack.Navigator>
