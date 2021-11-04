@@ -13,7 +13,7 @@ Login.js            : contains the codes for the app's login screen
 
 /Shopping-App/assets/         
                     : this folder contains almost all the image files used in the project
-
+                    
 /Shopping-App/components/     
 CartIcon.js         : contains the cart icon which is displayed in the header of the Product Details screen
 CheckoutIcon.js     : contains the checkout icon which is displayed in the header of the Cart screen
