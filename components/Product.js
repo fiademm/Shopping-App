@@ -1,37 +1,22 @@
 import React from 'react';
 import {Text, Image, View, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
 import colors from '../colors.js';
 
 const width = Dimensions.get('screen').width/2 - 30;
 export function Product({name, price, color, image, onPress}) {
   return (
     <TouchableOpacity onPress={onPress}>
-    <View style={style.card}>
-        <View style={{alignItems:"flex-end"}}>
-            <View style={{
-                width:30, 
-                height:30, 
-                borderRadius:15, 
-                alignItems:"center", 
-                justifyContent:"center",
-            }}>
-                <MaterialIcons name="favorite" size={18} />
+        <View style={style.card}>
+            <View style={{height: 100, alignItems: "center"}}>
+                <Image style={{ flex:1, width: '100%', resizeMode:"contain"}} source={image} />
             </View>
-        </View>
-        <View style={{height: 100, alignItems: "center"}}>
-            <Image style={{ flex:1, width: '100%', resizeMode:"contain"}} source={image} />
-        </View>
-        <Text style={{fontWeight:"bold", fontSize: 17, marginTop: 10}}> {name + ' - ' + color} </Text>
+            <Text style={{fontWeight:"bold", fontSize: 17, marginTop: 10}}> {name + ' - ' + color} </Text>
 
-        <View style={{flexDirection:"row", justifyContent: "space-between", marginTop:5}}>
-            <Text style={{fontSize:19, fontWeight:"bold",}}>${price}</Text>
-            <View style={{height:28, width:25, backgroundColor: '#000', borderRadius:5, justifyContent:"center", alignItems:"center"}}>
-                <Text style={{fontSize:22, color: '#fff', fontWeight:"bold", justifyContent:'center', alignItems: 'center'}}>+</Text>
+            <View style={{flexDirection:"row", justifyContent: "space-between", marginTop:5}}>
+                <Text style={{fontSize:19, fontWeight:"bold",}}>${price}</Text>
             </View>
         </View>
-    </View>
-</TouchableOpacity>
+    </TouchableOpacity>
   );
 }
 
@@ -82,7 +67,6 @@ const style = StyleSheet.create({
       borderColor: colors.green,
   },
   card: {
-      height: 250,
       backgroundColor: colors.light,
       width,
       marginHorizontal:2,

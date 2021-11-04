@@ -35,32 +35,26 @@ export function ProductsList ({navigation}) {
       backgroundColor: colors.dark,
     }}>
       <View style={style.header}>
-                    <View>
-                        <Text 
-                            style={{
-                                fontSize:25, fontStyle: 'italic', fontWeight:"bold"
-                            }}>
-                                welcome to the
-                        </Text>
-                        <Text 
-                            style={{
-                                fontSize:38, fontWeight:"bold", color: colors.white, textShadowColor: colors.dark, textShadowRadius: 10
-                            }}>
-                                Drip House
-                        </Text>
-                    </View>
-                    <Entypo name="shopping-cart" size={40} style={{marginTop: 20}} color="black" onPress={() => navigation.navigate('Cart')} />
-                </View>
+        <View>
+          <Text 
+            style={{
+              fontSize:38, fontWeight:"bold", color: colors.white, textShadowColor: colors.dark, textShadowRadius: 10
+            }}>
+              Drip House
+          </Text>
+        </View>
+        <Entypo name="shopping-cart" size={40} style={{marginTop: 5}} color="black" onPress={() => navigation.navigate('Cart')} />
+      </View>
 
-                <View style={{marginTop:30, marginBottom:10, flexDirection:"row"}}>
-                    <View style={style.searchContainer} >
-                        <Feather name="search" size={25} color="black" style={{marginLeft:20, marginRight:10}} />
-                        <TextInput placeholder="Search" style={style.input} />
-                    </View>
-                    <View style={style.sortBtn}>
-                        <FontAwesome name="sort" size={30} color={colors.white} />
-                    </View>
-                </View>
+      <View style={{marginTop:30, marginBottom:10, flexDirection:"row"}}>
+        <View style={style.searchContainer} >
+          <Feather name="search" size={25} color="black" style={{marginLeft:20, marginRight:10}} />
+          <TextInput placeholder="Search" style={style.input} />
+        </View>
+        <View style={style.sortBtn}>
+          <FontAwesome name="sort" size={30} color={colors.white} />
+        </View>
+      </View>
 
       <FlatList
       columnWrapperStyle={{justifyContent:"space-between"}}

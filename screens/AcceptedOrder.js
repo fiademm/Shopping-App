@@ -11,6 +11,8 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { BackHandler } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
+import colors from '../colors';
+import { block } from 'react-native-reanimated';
 
 export function AcceptedOrder (params) {
     const navigation = params.navigation;
@@ -26,9 +28,9 @@ export function AcceptedOrder (params) {
             <Text style={styles.title}>
                 Congratulations, your order has been accepted.
             </Text>
-            <View style={{padding:20, borderColor: 'white', borderWidth:2, borderBottomLeftRadius:15, borderBottomRightRadius:15, backgroundColor: '#111', color: 'white'}}>
+            <View style={{padding:20, borderColor: 'white', borderWidth:2, borderBottomLeftRadius:10, borderBottomRightRadius:10, backgroundColor: '#111', color: colors.light}}>
               <Text style={styles.description}>
-                  Thank you for shopping with the Drip House, we look foward to seeing you next time. We hope you enjoy the product.
+                  Thank you for shopping with the Drip House.
               </Text>
               <Text style={styles.descriptionn}>
                   We wish you all the best.
@@ -61,6 +63,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: 'center',
     resizeMode: 'contain',
+    opacity: '80%'
   },
   continueBtn: {
     backgroundColor: '#fff',
@@ -85,20 +88,17 @@ const styles = StyleSheet.create({
   description: {
     textAlign: 'center',
     color: "#fff",
+    fontWeight: 'bold',
     fontSize:17,
     margin: 5,
-    fontStyle: 'italic',
   },
   descriptionn: {
     textAlign: 'center',
-    backgroundColor: 'white',
-    color: "#000",
+    color: "#fff",
     fontSize:19,
-    margin: 5,
     marginTop: 11,
     fontWeight: 'bold',
     borderRadius: 15,
-    padding: 15
   },
   buttonContainer: {
     height:45,

@@ -12,7 +12,6 @@ import {
 import { getProduct } from '../services/ProductsService.js';
 import { CartContext } from '../CartContext';
 import colors from '../colors';
-import { CartIcon } from '../components/CartIcon.js';
 
 export function ProductDetails({route}) {
   const { productId } = route.params;

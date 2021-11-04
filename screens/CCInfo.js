@@ -30,7 +30,7 @@ export function CCInfo(params) {
       return;
     }
     else {
-      navigation.navigate('AcceptedOrder');
+      navigation.navigate('Confirmation');
     }
   };
 

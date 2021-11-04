@@ -16,6 +16,7 @@ import { Splash } from './screens/Splash.js';
 import { Welcome } from './screens/Welcome.js';
 import { Checkout } from './screens/Checkout.js';
 import { CCInfo } from './screens/CCInfo.js';
+import { Confirmation } from './components/Confirmation.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,7 +25,7 @@ function App() {
     <CartProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName = 'AcceptedOrder'
+          initialRouteName = 'Splash'
         >
           <Stack.Screen name='Splash' component={Splash}
           options={({ navigation }) => ({
@@ -68,13 +69,12 @@ function App() {
             title: 'Credit Card Information',
             headerTitleStyle: styles.headerTitle,
           })}/>
-          <Stack.Screen name='Confirmation' component={}
-          options={({ navigation }) => ({
-            title: 'Order Confirmation',
-            headerTitleStyle: styles.headerTitle,
-          })}/>
+          <Stack.Screen name='Confirmation' component={Confirmation}
+          options={{headerShown: false
+          }}/>
           <Stack.Screen name='AcceptedOrder' component={AcceptedOrder}
-          options={{headerShown: false}}/>
+          options={{headerShown: false
+          }}/>
         </Stack.Navigator>
       </NavigationContainer>
     </CartProvider>
