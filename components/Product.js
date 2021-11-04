@@ -9,13 +9,13 @@ export function Product({name, price, color, image, onPress}) {
         <View style={style.card}>
             <View style={{height: 100, alignItems: "center"}}>
                 <Image style={{ flex:1, width: '100%', resizeMode:"contain"}} source={image} />
-            ;</View>
+            </View>
             <Text style={{fontWeight:"bold", fontSize: 17, marginTop: 10}}> {name + ' - ' + color} </Text>
 
             <View style={{flexDirection:"row", justifyContent: "space-between", marginTop:5}}>
                 <Text style={{fontSize:19, fontWeight:"bold",}}>${price}</Text>
             </View>
-        </View>;
+        </View>
     </TouchableOpacity>
   );
 }
