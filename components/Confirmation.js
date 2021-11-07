@@ -12,9 +12,9 @@ export function Confirmation(params) {
   return (
     <SafeAreaView style={styles.container}>
         <ImageBackground style={styles.bgImage} source={require('../assets/black.png')}>
-          <View style={{width: "40%", borderRadius:10, borderColor: colors.light, borderWidth: 2, justifyContent: "center", alignItems:"center"}}>
+          <View style={{borderRadius:10, borderColor: colors.light, borderWidth: 2, justifyContent: "center", alignItems:"center"}}>
             <View style={{borderBottomWidth: 2, width: "100%", justifyContent:"center", alignItems:"center", padding:10, borderBottomColor: colors.white}}>
-                <Text style={{color: colors.white, fontSize: 26}}>Order Confimation</Text>
+                <Text style={{color: colors.white, fontWeight: "bold", fontSize: 26}}>Order Confimation</Text>
             </View>
             <View>
                 <Text style={{color: colors.white, fontSize: 22, padding:10}}>
@@ -59,6 +59,6 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: "center",
     alignItems: "center",
-    opacity: '80%'
+    opacity: 80,
   },
 });

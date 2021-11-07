@@ -3,7 +3,6 @@ import React from 'react';
 import {
   StyleSheet,
   View,
-  Image,
   Text,
   TouchableHighlight,
   ImageBackground
@@ -12,7 +11,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { BackHandler } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import colors from '../colors';
-import { block } from 'react-native-reanimated';
 
 export function AcceptedOrder (params) {
     const navigation = params.navigation;
@@ -26,14 +24,11 @@ export function AcceptedOrder (params) {
               <Entypo name="thumbs-up" size={40} color="black" />
             </View>
             <Text style={styles.title}>
-                Congratulations, your order has been accepted.
+                Congratulations, order checked out succesfully.
             </Text>
-            <View style={{padding:20, borderColor: 'white', borderWidth:2, borderBottomLeftRadius:10, borderBottomRightRadius:10, backgroundColor: '#111', color: colors.light}}>
+            <View style={{padding:2, borderColor: 'white', borderWidth:2, borderBottomLeftRadius:10, borderBottomRightRadius:10, backgroundColor: '#111', color: colors.light}}>
               <Text style={styles.description}>
                   Thank you for shopping with the Drip House.
-              </Text>
-              <Text style={styles.descriptionn}>
-                  We wish you all the best.
               </Text>
             </View>
             </View>
@@ -41,7 +36,7 @@ export function AcceptedOrder (params) {
                 <Text style={{fontWeight: "bold", fontSize: 17, color: 'black'}}>Continue shopping</Text>
               </TouchableHighlight>
               <TouchableHighlight style={styles.continueBtn} onPress={()=> BackHandler.exitApp()}>
-                  <Text style={{fontWeight: "bold", fontSize: 17,}}>Go Home</Text>
+                  <Text style={{fontWeight: "bold", fontSize: 17,}}>Exit</Text>
               </TouchableHighlight>
           </ImageBackground>
       </SafeAreaView>
@@ -63,7 +58,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: 'center',
     resizeMode: 'contain',
-    opacity: '80%'
+    opacity: 80
   },
   continueBtn: {
     backgroundColor: '#fff',

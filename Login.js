@@ -27,7 +27,7 @@ export function Login(params) {
 
   return (
     <SafeAreaView style={styles.container}>
-        <ImageBackground style={styles.bgImage} source={require('./assets/wallpaper.jpg')}>
+        <ImageBackground style={styles.bgImage} source={require('./assets/black.png')}>
           <View style={{marginBottom: '5%', justifyContent: "center", alignItems:"center"}}>
             <View style={styles.inputContainer}>
               <TextInput style={styles.inputs}
@@ -47,7 +47,7 @@ export function Login(params) {
               <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/nolan/40/000000/key.png'}}/>
             </View>
 
-            <TouchableOpacity style={styles.btnForgotPassword} onPress={() => navigation.navigate('SignUp')}>
+            <TouchableOpacity style={styles.btnForgotPassword} onPress={() => navigation.navigate('Signup')}>
                 <Text style={styles.btnText}>Forgot your password?</Text>
             </TouchableOpacity>
 
@@ -55,7 +55,7 @@ export function Login(params) {
               <Text style={{fontWeight: "bold", fontSize: 17,}}>Login</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.continueBtn} onPress={() => navigation.navigate('SignUp')}>
-              <Text style={{fontWeight: "bold", fontSize: 17,}}>Register</Text>
+              <Text style={{fontWeight: "bold", fontSize: 17,}}>Sign up</Text>
             </TouchableOpacity>
           </View>
         </ImageBackground>
@@ -75,10 +75,9 @@ const styles = StyleSheet.create({
   continueBtn: {
     backgroundColor: '#fff',
     padding: 10,
-    paddingHorizontal: 15,
-    borderRadius: 30,
-    margin: 10,
-    width: 200,
+    borderRadius: 12,
+    margin: 7,
+    width: 180,
     alignItems: "center",
   },
   inputContainer: {
@@ -150,6 +149,7 @@ const styles = StyleSheet.create({
   },
   loginText: {
     color: 'white',
+    fontSize: 18,
   },
   bgImage:{
     flex: 1,

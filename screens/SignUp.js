@@ -1,20 +1,23 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { View, Text, Image, ImageBackgroundBase, TextInput, StyleSheet, TouchableOpacity, Alert, ImageBackground } from "react-native";
+import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity, Alert, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { AntDesign } from "@expo/vector-icons";
-import { Link } from "@react-navigation/native";
 
 export function SignUp(params) {
   const navigation = params.navigation;
-  const [name, setName] = useState(0);
+  const [fname, setFName] = useState(0);
+  const [lname, setLName] = useState(0);
   const [email, setEmail] = useState(0);
-  const [password, setpassword] = useState(0);
+  const [password, setPassword] = useState(0);
 
   const checkInput = (string) =>
   {
-    if(typeof(name) !== "string"){
-      alert('Please enter name');
+    if(typeof(fname) !== "string"){
+      alert('Please enter first name');
+      return;
+    }
+    if(typeof(lname) !== "string"){
+      alert('Please enter last name');
       return;
     }
     if(typeof(email) !== "string"){ 
@@ -33,14 +36,22 @@ export function SignUp(params) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ImageBackground style={styles.bgImage} source={require('../assets/wallpaper.jpg')}>
-      <View style={{marginBottom: '5%', justifyContent: "center", alignItems:"center"}}>
+      <ImageBackground style={styles.bgImage} source={require('../assets/black.png')}>
+      <View style={{justifyContent: "center", alignItems:"center"}}>
           <View style={styles.inputContainer}>
             <TextInput style={styles.inputs}
-                placeholder="Full name"
+                placeholder="First name"
                 underlineColorAndroid='transparent'
-                onChangeText={(value) => setName(value)}/>
-            <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/color/40/000000/circled-user-male-skin-type-3.png'}}/>
+                onChangeText={(value) => setFName(value)}/>
+            <Image style={styles.inputIcon} source={{uri: "https://img.icons8.com/ios/24/000000/user--v3.png"}}/>
+          </View>
+          
+          <View style={styles.inputContainer}>
+            <TextInput style={styles.inputs}
+                placeholder="Last name"
+                underlineColorAndroid='transparent'
+                onChangeText={(value) => setLName(value)}/>
+            <Image style={styles.inputIcon} source={{uri: "https://img.icons8.com/ios/24/000000/user--v3.png"}}/>
           </View>
 
           <View style={styles.inputContainer}>
@@ -49,7 +60,7 @@ export function SignUp(params) {
                 keyboardType="email-address"
                 underlineColorAndroid='transparent'
                 onChangeText={(value) => setEmail(value)}/>
-            <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/flat_round/40/000000/secured-letter.png'}}/>
+            <Image style={styles.inputIcon} source={{uri: "https://img.icons8.com/ios/24/000000/new-post.png"}}/>
           </View>
           
           <View style={styles.inputContainer}>
@@ -57,11 +68,11 @@ export function SignUp(params) {
                 placeholder="Password"
                 secureTextEntry={true}
                 underlineColorAndroid='transparent'
-                onChangeText={(value) => setpassword(value)}/>
-            <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/color/40/000000/password.png'}}/>
+                onChangeText={(value) => setPassword(value)}/>
+            <Image style={styles.inputIcon} source={{uri: "https://img.icons8.com/ios/24/000000/password1--v2.png"}}/>
           </View>
 
-          <TouchableOpacity style={styles.btnByRegister} onPress={() => {Alert.alert('Okayy')}}>
+          <TouchableOpacity style={styles.btnByRegister}>
               <Text style={styles.textByRegister}>By registering on this App you confirm that you have read and accept our policy</Text>
           </TouchableOpacity>
 
@@ -69,11 +80,11 @@ export function SignUp(params) {
               style={[styles.buttonContainer, styles.loginButton]} 
               onPress={checkInput}
           >
-            <Text style={styles.loginText}>Login</Text>
+            <Text style={styles.loginText}>Sign up</Text>
           </TouchableOpacity>
 
 
-          <TouchableOpacity style={styles.buttonContainer} onPress={() => {navigation.navigate('Login')}}>
+          <TouchableOpacity style={styles.buttonContainer, {fontSize: 22}} onPress={() => {navigation.navigate('Login')}}>
               <Text style={styles.btnText}>Have an account?</Text>
           </TouchableOpacity>
         </View>
@@ -93,8 +104,7 @@ const styles = StyleSheet.create({
   continueBtn: {
     backgroundColor: '#fff',
     padding: 10,
-    paddingHorizontal: 15,
-    borderRadius: 30,
+    borderRadius: 10,
     margin: 10,
     width: 200,
     alignItems: "center",
@@ -140,8 +150,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom:20,
-    width:200,
-    borderRadius:30,
+    width:170,
+    borderRadius:15,
     backgroundColor:'transparent'
   },
     btnByRegister: {
@@ -163,13 +173,12 @@ const styles = StyleSheet.create({
       },
       shadowOpacity: 0.50,
       shadowRadius: 12.35,
-  
       elevation: 19,
     },
     loginText: {
       color: 'black',
       fontWeight: "bold",
-      fontSize: 17
+      fontSize: 18
     },
     bgImage:{
       flex: 1,
@@ -193,4 +202,4 @@ const styles = StyleSheet.create({
       textShadowOffset: {width: -1, height: 1},
       textShadowRadius: 10
     }
-  }); 
+  });

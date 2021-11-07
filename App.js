@@ -25,7 +25,7 @@ function App() {
     <CartProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName = 'Splash'
+          initialRouteName = 'Checkout'
         >
           <Stack.Screen name='Splash' component={Splash}
           options={({ navigation }) => ({
@@ -61,13 +61,11 @@ function App() {
           })} />
           <Stack.Screen name='Checkout' component={Checkout}
           options={({ navigation }) => ({
-            title: 'Personal Information',
-            headerTitleStyle: styles.headerTitle,
+            headerShown: false
           })}/>
           <Stack.Screen name='CCInfo' component={CCInfo}
           options={({ navigation }) => ({
-            title: 'Credit Card Information',
-            headerTitleStyle: styles.headerTitle,
+            headerShown: false
           })}/>
           <Stack.Screen name='Confirmation' component={Confirmation}
           options={{headerShown: false
